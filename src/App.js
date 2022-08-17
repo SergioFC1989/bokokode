@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+//import/no-anonymous-default-export
+import React from 'react';
+import { Route, Routes as Switch } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import routesPath from './routes';
+
+const App = () => (
+  <RecoilRoot>
+    <Switch>
+      {routesPath.map(({ path, ...props })=> 
+        <Route key={path} path={path} {...props} />
+      )}
+    </Switch>
+  </RecoilRoot>
+);
+
 
 export default App;

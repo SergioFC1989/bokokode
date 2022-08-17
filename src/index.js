@@ -1,17 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Grommet } from 'grommet';
+import styled from 'styled-components';
 import reportWebVitals from './reportWebVitals';
+import App from './App';
+import theme from './theme'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+const StyledGrommet = styled(Grommet)`
+  min-height: 100vh;
+  min-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+  overflow: hidden;
+  border-radius: 5px;
+`;
+
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <StyledGrommet theme={theme}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StyledGrommet>
+  </React.StrictMode>, 
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
