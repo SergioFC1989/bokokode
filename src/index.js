@@ -12,14 +12,12 @@ import CustomTheme from './custom-theme'
 const container = document.getElementById('root');
 const root = createRoot(container);
 const StyledGrommet = styled(Grommet)`
-  height: 100vh;
-  width: 90%;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   margin: 0;
   padding: 0;
   background: #FFFFFF;
-  overflow: hidden;
 `;
 
 root.render(
@@ -29,6 +27,6 @@ root.render(
         <App />
       </BrowserRouter>
     </StyledGrommet>
-  </React.StrictMode>, 
+  </React.StrictMode>,
 );
 reportWebVitals();

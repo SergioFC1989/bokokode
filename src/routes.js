@@ -1,6 +1,6 @@
-import routeFrontPage from './views/front-page/route';
+import routeLanding from './landing/LandingRoute';
 
 
 export default [
-	...routeFrontPage,
+	...routeLanding,
 ];
