@@ -41,6 +41,7 @@ const CustomTheme = deepMerge(grommet, {
     font: {
       family: 'Archivo',
       size: '15px',
+      weight: 'normal',
       face: `
         /* vietnamese */
         @font-face {
@@ -87,33 +88,54 @@ const CustomTheme = deepMerge(grommet, {
     },
     large: {
       size: '20px',
+      height: '21.76px'
     },
     xlarge: {
       size: '22px',
     },
+    xxlarge: {
+      size: '32px',
+      height: '34.82px'
+    }
   },
   button: {
     border: {
       radius: '0px',
     },
     primary: {
-      height: '1211px',
       opacity: 0,
       color: '#FFFFFF',
+      background: {
+        color: '#000000'
+      },
       border: {
         color: '#000000',
         round: 'none',
       },
-      background: {
-        color: '#000000'
+      font: {
+        weight: '500',
       },
+      padding: {
+        vertical: '13px'
+      }
     },
     secondary: {
-
       opacity: 0,
-      background: '#F07F7F',
-      color: '#FFFFFF',
-      padding: '10px',
+      color: '#000000',
+      background: {
+        color: '#FFFFFF'
+      },
+      border: {
+        color: '#000000',
+        width: '3px',
+        round: 'none',
+      },
+      font: {
+        weight: '500',
+      },
+      padding: {
+        vertical: '15px'
+      }
     },
     default: {
       background: 'transparent',

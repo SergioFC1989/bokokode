@@ -13,6 +13,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 const StyledGrommet = styled(Grommet)`
   max-width: 1440px;
+  min-width: auto;
   margin-left: auto;
   margin-right: auto;
   margin: 0;

@@ -1,15 +1,34 @@
 import React from 'react';
-import { Box, Button, Text } from 'grommet';
+import { Box, Image, Text } from 'grommet';
 
-const Featured = () => (
+import Button from '../../common/component/Button';
+
+const Featured = ({ src }) => (
   <>
     <Box fill='horizontal'>
-      <Box direction='row'>
+      <Box 
+        direction='row' 
+        margin={{
+          top: 'none',
+          bottom: '27px'
+        }}
+      >
         <Box fill='horizontal' align='start'>
-          <Text margin='none' size='xlarge' weight='bold'>Samurai King Restings</Text>
+          <Text 
+            margin='none' 
+            size='xxlarge' 
+            weight='bold'
+          >
+            Samurai King Restings
+          </Text>
         </Box>
         <Box fill='horizontal' align='end'>
           <Button primary label='ADD TO CART' />
+        </Box>
+      </Box>
+      <Box fill='horizontal' height='553px' background={{ image: `url(${src})` }} justify='end'>
+        <Box width="271.95px" height="67px" background='#FFFFFF' align="center" justify="center">
+          <Text margin='none' size='large' weight="700">Photo of the day</Text>
         </Box>
       </Box>
     </Box>
