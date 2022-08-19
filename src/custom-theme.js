@@ -79,23 +79,31 @@ const CustomTheme = deepMerge(grommet, {
   text: {
     xsmall: {
       size: '13px',
+      height: '14.14px'
     },
     small: {
       size: '15px',
+      height: '16.32px'
+    },
+    regular: {
+      size: '16x',
+      height: '17.41px',
     },
     medium: {
       size: '18x',
+      height: '27px',
     },
     large: {
       size: '20px',
-      height: '21.76px'
+      height: '21.76px',
     },
     xlarge: {
       size: '22px',
+      height: '23.94px',
     },
     xxlarge: {
       size: '32px',
-      height: '34.82px'
+      height: '34.82px',
     }
   },
   button: {

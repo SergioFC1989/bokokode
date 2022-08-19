@@ -7,6 +7,7 @@ import CartShopping from '../../common/assets/shopping-cart.svg';
 const Header = ({ onClick }) => (
   <>
     <Box
+      id='box-header'
       fill='horizontal'
       direction='row'
       justify='start'
@@ -24,11 +25,16 @@ const Header = ({ onClick }) => (
         bottom: '33px'
       }}
     >
-      <Box align='start' fill='horizontal'>
+      <Box
+        id='box-header-children'
+        fill='horizontal'
+        align='start'
+      >
         <Box
-          align='start'
+          id='box-header-title'
           height='19.67px'
           width='124px'
+          align='start'
           margin={{
             top: '24px',
             bottom: 'none'
@@ -40,7 +46,11 @@ const Header = ({ onClick }) => (
           />
         </Box>
       </Box>
-      <Box align='end' fill='horizontal'>
+      <Box
+        id='box-header-icon-cart'
+        fill='horizontal'
+        align='end'
+      >
         <Box height='54px' width='54px' >
           <Image
             fit="cover"

@@ -2,26 +2,43 @@ import React, { useEffect, useState } from 'react';
 
 import Featured from './component/Featured';
 import Header from './component/Header';
+import Information from './component/Information';
 import Layout from '../common/component/Layout';
+
 import useFetch from '../api/useFetch';
 
 const Landing = () => {
-  const { data, error, loading } = useFetch('https://technical-frontend-api.bokokode.com/api/products?page=1', { method: 'POST' });
+  const { data, error, loading } = useFetch(
+    'https://technical-frontend-api.bokokode.com/api/products?page=1',
+    { method: 'POST' }
+  )
   const [photoDay, setPhotoDay] = useState()
-  
+  const [productAlsoBuy, setProductAlsoBuy] = useState()
+
   useEffect(() => {
     data.length > 0 && (() => {
-      const firstImage = data.map(elem => elem.data[0].image.src)
-      setPhotoDay(firstImage)
+      console.log(data)
+      //Search photo of the day for prop featured === true
+      const foundImageFeatured = data.map(elem => elem.data.find(elem => elem.featured === true))
+      foundImageFeatured !== undefined && (() => {
+        const selectedImageFeatured = foundImageFeatured.map(elem => elem.image.src)
+        setPhotoDay(selectedImageFeatured)
+      })()
+      //Search products that people also buy
+      const foundProductsAlsoBuy = data.map(elem => elem.data.find(elem => elem.people_also_buy.length > 0))
+      foundProductsAlsoBuy !== undefined && (() => {
+        const selectedProductsAlsoBuy = foundProductsAlsoBuy.flatMap(elem => elem.people_also_buy)
+        setProductAlsoBuy(selectedProductsAlsoBuy)
+      })()
     })()
-  },[data])
-  
+  }, [data])
 
   return (
     <>
       <Layout>
         <Header />
         <Featured src={photoDay} />
+        <Information data={productAlsoBuy} />
       </Layout>
     </>
   );
