@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import Featured from './component/Featured';
-import Header from './component/Header';
 import Information from './component/Information';
 import Layout from '../common/component/Layout';
 
@@ -36,7 +35,6 @@ const Landing = () => {
   return (
     <>
       <Layout>
-        <Header />
         <Featured src={photoDay} />
         <Information data={productAlsoBuy} />
       </Layout>

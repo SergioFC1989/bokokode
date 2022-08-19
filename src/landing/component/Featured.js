@@ -10,7 +10,7 @@ const Featured = ({ src }) => (
       fill='horizontal'
       margin={{
         top: 'none',
-        bottom: '42px'
+        bottom: '46px'
       }}
     >
       <Box
@@ -25,7 +25,7 @@ const Featured = ({ src }) => (
           <Text
             margin='none'
             size='xxlarge'
-            weight='bold'
+            weight={700}
           >
             Samurai King Restings
           </Text>
@@ -38,11 +38,15 @@ const Featured = ({ src }) => (
         id='box-featured-image'
         fill='horizontal'
         height='553px'
-        background={{ image: `url(${src})` }}
         justify='end'
+        background={{ 
+          image: `url(${src})`, 
+          position: 'center',
+          size: 'cover',
+        }}
       >
         <Box width="271.95px" height="67px" background='#FFFFFF' align="center" justify="center">
-          <Text margin='none' size='large' weight="700">Photo of the day</Text>
+          <Text margin='none' size='large' weight={700}>Photo of the day</Text>
         </Box>
       </Box>
     </Box>

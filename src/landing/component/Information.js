@@ -5,6 +5,16 @@ import Product from '../../common/component/Product';
 
 const Information = ({ data }) => (
   <>
+  <Box
+    width='117px'
+    height='147px'
+    margin={{
+      top: 'none',
+      bottom: '14px',
+    }}
+  >
+
+  </Box>
     <Box
       id='box-information'
       justify='start'
@@ -23,7 +33,7 @@ const Information = ({ data }) => (
       }}
     >
       <Box
-        id='box-featured-children'
+        id='box-information-children'
         fill='horizontal'
         margin={{
           top: 'none',
@@ -38,7 +48,7 @@ const Information = ({ data }) => (
           }}
         >
           <Box
-            id='box-featured-about'
+            id='box-information-about'
             fill='horizontal'
             align='start'
           >
@@ -50,7 +60,7 @@ const Information = ({ data }) => (
               <Text
                 margin='none'
                 size='xlarge'
-                weight='700'
+                weight={700}
               >
                 About the Samurai King Resting
               </Text>
@@ -60,7 +70,7 @@ const Information = ({ data }) => (
                   bottom: '12px'
                 }}
                 size='xlarge'
-                weight='700'
+                weight={700}
                 color='#656565'
               >
                 Pets
@@ -68,7 +78,7 @@ const Information = ({ data }) => (
               <Text
                 margin='none'
                 size='medium'
-                weight='400'
+                weight={400}
                 color='#656565'
               >
                 So how did the classical Latin become so incoherent? According to McClintock,
@@ -82,7 +92,7 @@ const Information = ({ data }) => (
             </Box>
           </Box>
           <Box
-            id='box-featured-also-buy'
+            id='box-information-also-buy'
             fill='horizontal'
             align='end'
           >
@@ -95,11 +105,15 @@ const Information = ({ data }) => (
                 textAlign='end'
                 margin='none'
                 size='xlarge'
-                weight='700'
+                weight={700}
               >
                 People also buy
               </Text>
-              <Box direction='row' gap='30px'>
+              <Box 
+                id='box-information-products-also-buy'
+                direction='row' 
+                gap='30px'
+              >
                 {data !== undefined && data.map(elem => (
                   <Product alsoBuy
                     src={elem.image.src}

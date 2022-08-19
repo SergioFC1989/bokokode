@@ -3,10 +3,10 @@ import { Box, Image, Text } from 'grommet';
 
 const Product = ({
   alsoBuy,
-  src,
   category,
   description,
-  price
+  price,
+  src,
 }) => (
   <>
     {alsoBuy
@@ -26,7 +26,7 @@ const Product = ({
             <Text
               margin='none'
               size='xsmall'
-              weight='700'
+              weight={700}
               color='#656565'
             >
               {category}
@@ -34,7 +34,7 @@ const Product = ({
             <Text
               margin='none'
               size='regular'
-              weight='700'
+              weight={700}
               color='#000000'
             >
               {description}
@@ -42,7 +42,7 @@ const Product = ({
             <Text
               margin='none'
               size='small'
-              weight='400'
+              weight={400}
               color='#656565'
             >
               {price}
