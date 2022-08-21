@@ -3,31 +3,24 @@ import { deepMerge } from 'grommet/utils';
 
 const CustomTheme = deepMerge(grommet, {
   global: {
-    active: {
-      padding: 0,
-      background: {
-        opacity: "none",
-      },
-    },
     colors: {
-      background: '#FFFFFF',
-      brand: '#5B83E6',
-      text: '#000000',
-      border: 'light-5',
-      placeholder: 'light-4',
-      'status-error': '#e36262',
-      'status-warning': '#FBBD51',
-      'brand-contrast': '#F2B044',
+      'dark-grey': '#656565',
+      'medium-grey': '#9B9B9B',
+      'light-grey': '#E4E4E4',
     },
     breakpoints: {
       small: {
         value: 768,
-        edgeSize: {
-          xsmall: '6px',
-          small: '12px',
-          medium: '16px',
-          large: '22px',
-        },
+        // edgeSize: {
+        //   none: '0px',
+        //   hair: '1px',
+        //   xxsmall: '2px',
+        //   xsmall: '3px',
+        //   small: '6px',
+        //   medium: '12px',
+        //   large: '24px',
+        //   xlarge: '58px'
+        // }
       },
     },
     focus: {
@@ -77,6 +70,7 @@ const CustomTheme = deepMerge(grommet, {
     },
   },
   text: {
+    margin: 0,
     xsmall: {
       size: '13px',
       height: '14.14px'
@@ -108,7 +102,7 @@ const CustomTheme = deepMerge(grommet, {
   },
   button: {
     border: {
-      radius: '0px',
+      radius: '0',
     },
     primary: {
       opacity: 0,
@@ -124,8 +118,13 @@ const CustomTheme = deepMerge(grommet, {
         weight: '500',
       },
       padding: {
-        vertical: '13px'
-      }
+        vertical: '0.813rem',
+        horizontal: '2.438rem',
+      },
+      extend: `
+        width: 16.063rem;
+        height: 2.938rem;
+      `
     },
     secondary: {
       opacity: 0,
@@ -143,12 +142,15 @@ const CustomTheme = deepMerge(grommet, {
       },
       padding: {
         vertical: '15px'
-      }
+      },
+      extend: `
+        width: 24.5rem;
+        height: 3.438rem;
+      `
     },
     default: {
       background: 'transparent',
       color: 'black',
-      padding: '10px',
     },
   },
 });

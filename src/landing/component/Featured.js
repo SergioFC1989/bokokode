@@ -1,11 +1,16 @@
 import React from 'react';
-import { Box, Text } from 'grommet';
+import { Box, Button, Text } from 'grommet';
 
-import Button from '../../common/component/Button';
+const Featured = ({ product }) => {
+  const { title, src } = product;
+  // Imagen inline <Fe
 
-const Featured = ({ src }) => (
   <>
-    <Box
+    <Box>
+      <h1>{title}</h1>
+      <Button />
+    </Box>
+    {/* <Box
       id='box-featured'
       fill='horizontal'
       margin={{
@@ -33,23 +38,23 @@ const Featured = ({ src }) => (
         <Box id='box-featured-button-cart' fill='horizontal' align='end'>
           <Button primary label='ADD TO CART' />
         </Box>
-      </Box>
-      <Box
-        id='box-featured-image'
-        fill='horizontal'
-        height='553px'
-        justify='end'
-        background={{ 
-          image: `url(${src})`, 
-          position: 'center',
-          size: 'cover',
-        }}
-      >
-        <Box width="271.95px" height="67px" background='#FFFFFF' align="center" justify="center">
-          <Text margin='none' size='large' weight={700}>Photo of the day</Text>
-        </Box>
+      </Box> */}
+    <Box
+      id='box-featured-image'
+      fill='horizontal'
+      height='553px'
+      justify='end'
+      background={{
+        image: `url(${src})`,
+        position: 'center',
+        size: 'cover',
+      }}
+    >
+      <Box width="271.95px" height="67px" background='#FFFFFF' align="center" justify="center">
+        <Text margin='none' size='large' weight={700}>Photo of the day</Text>
       </Box>
     </Box>
+  </Box>
   </>
 );
 export default Featured;

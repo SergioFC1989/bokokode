@@ -8,10 +8,7 @@ const Layout = ({ children }) => {
   return (
     <Box
       margin={{
-        left: '82px',
-        right: '68px',
-        // top: '37px',
-        // bottom: '61px',
+        horizontal: '5rem',
       }}
     >
       <Header />
