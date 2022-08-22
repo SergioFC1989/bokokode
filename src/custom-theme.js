@@ -6,6 +6,7 @@ const CustomTheme = deepMerge(grommet, {
     colors: {
       text: '#000000',
       brand: '#000000',
+      'dark': '#1D1D1D',
       'dark-grey': '#656565',
       'medium-grey': '#9B9B9B',
       'light-grey': '#E4E4E4',
@@ -58,7 +59,7 @@ const CustomTheme = deepMerge(grommet, {
         @font-face {
           font-family: 'Archivo';
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           font-stretch: 100%;
           font-display: swap;
           src: url(https://fonts.gstatic.com/s/archivo/v18/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q82sJaRE-NWIDdgffTTNDNZ-BdpF0s.woff2) format('woff2');
@@ -68,7 +69,7 @@ const CustomTheme = deepMerge(grommet, {
         @font-face {
           font-family: 'Archivo';
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           font-stretch: 100%;
           font-display: swap;
           src: url(https://fonts.gstatic.com/s/archivo/v18/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q82sJaRE-NWIDdgffTTNDNZ-RdpF0s.woff2) format('woff2');
@@ -78,7 +79,7 @@ const CustomTheme = deepMerge(grommet, {
         @font-face {
           font-family: 'Archivo';
           font-style: normal;
-          font-weight: 400;
+          font-weight: 500;
           font-stretch: 100%;
           font-display: swap;
           src: url(https://fonts.gstatic.com/s/archivo/v18/k3k6o8UDI-1M0wlSV9XAw6lQkqWY8Q82sJaRE-NWIDdgffTTNDNZ9xdp.woff2) format('woff2');
@@ -86,6 +87,15 @@ const CustomTheme = deepMerge(grommet, {
         }
       `,
     },
+  },
+  checkBox: {
+    border: {
+      color: 'brand',
+    },
+    check: {
+      radius: '0px',
+    },
+    size: '1.05em',
   },
   text: {
     margin: 0,
@@ -115,8 +125,16 @@ const CustomTheme = deepMerge(grommet, {
       height: '23.94px',
     },
     xxlarge: {
+      size: '29px',
+      height: '31.55px',
+    },
+    xxxlarge: {
       size: '32px',
       height: '34.82px',
+    },
+    giant: {
+      size: '34px',
+      height: '36.99px',
     }
   },
   button: {
@@ -133,17 +151,6 @@ const CustomTheme = deepMerge(grommet, {
         color: '#000000',
         round: 'none',
       },
-      font: {
-        weight: '500',
-      },
-      padding: {
-        vertical: '0.8',
-        horizontal: '2.6',
-      },
-      extend: `
-        width: 17.1em;
-        height: 3.1em;
-      `
     },
     secondary: {
       opacity: 0,
@@ -155,9 +162,6 @@ const CustomTheme = deepMerge(grommet, {
         color: '#000000',
         width: '3px',
         round: 'none',
-      },
-      font: {
-        weight: '500',
       },
       padding: {
         vertical: '15px'

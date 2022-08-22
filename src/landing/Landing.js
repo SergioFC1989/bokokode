@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
-import { Box, Spinner } from 'grommet';
+import { Box, Pagination, Spinner } from 'grommet';
 
 import Layout from '../common/components/Layout';
-import FilterProduct from '../common/components/FilterProduct';
+
 import Featured from './components/featured/Featured';
+import Photography from './components/photography/Photography';
 
 import useProducts from './hooks/useProducts';
 
@@ -21,10 +22,11 @@ const Landing = () => {
             </Box> 
           )
           : (
-            <>
+            <Box>
               <Featured product={featuredProduct} />
-              {/* <FilterProduct /> */}
-            </>
+              <Photography listProduct={data} />
+              <Pagination numberItems={237} />
+            </Box>
           )
         }
       </Layout>

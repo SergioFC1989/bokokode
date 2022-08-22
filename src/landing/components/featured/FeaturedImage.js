@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const ImageContainer = styled(Box)`
   position: relative;
-`
+`;
 
 const ImageLabel = styled(Box)`
   position: relative;
   top: -4.4em;
-`
+`;
 
 const FeaturedImage = ({ alt, src }) => (
   <ImageContainer>

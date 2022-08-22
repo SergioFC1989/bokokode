@@ -2,21 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Main } from 'grommet';
 
-import Header from '../../landing/components/Header';
+import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
     <Main
-      gap='4em'
+      gap='4.3em'
       margin={{
         horizontal: 'large',
       }}
     >
       <Header />
-      
       {children}
     </Main>
-  );
+  )
 };
 
 Layout.propTypes = {
