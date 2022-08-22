@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from 'grommet';
+import { Main } from 'grommet';
 
-import Header from '../../landing/component/Header';
+import Header from '../../landing/components/Header';
 
 const Layout = ({ children }) => {
   return (
-    <Box
+    <Main
+      gap='4em'
       margin={{
-        horizontal: '5rem',
+        horizontal: 'large',
       }}
     >
       <Header />
+      
       {children}
-    </Box>
+    </Main>
   );
 };
 

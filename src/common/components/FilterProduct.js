@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterProduct = ({ title }) => {
   return (
-    <Box width='13rem'>
+    <Box width='13em'>
       <Text size='xlarge'>{title}</Text>
       <CheckBoxGroup options={[
         'People',

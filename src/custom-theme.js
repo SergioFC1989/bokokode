@@ -4,24 +4,42 @@ import { deepMerge } from 'grommet/utils';
 const CustomTheme = deepMerge(grommet, {
   global: {
     colors: {
+      text: '#000000',
+      brand: '#000000',
       'dark-grey': '#656565',
       'medium-grey': '#9B9B9B',
       'light-grey': '#E4E4E4',
     },
     breakpoints: {
       small: {
-        value: 768,
-        // edgeSize: {
-        //   none: '0px',
-        //   hair: '1px',
-        //   xxsmall: '2px',
-        //   xsmall: '3px',
-        //   small: '6px',
-        //   medium: '12px',
-        //   large: '24px',
-        //   xlarge: '58px'
-        // }
+        value: 360,
+        edgeSize: {
+          small: '6px',
+          medium: '12px',
+          large: '0.9em',
+        }
       },
+      medium: {
+        value: 768,
+        edgeSize: {
+          small: '6px',
+          medium: '12px',
+          large: '3em',
+        }
+      },
+      large: {
+        value: 1440,
+        edgeSize: {
+          small: '6px',
+          medium: '12px',
+          large: '5em',
+        }
+      }
+    },
+    deviceBreakpoints: {
+      phone: 'small',
+      tablet: 'medium',
+      computer: 'large',
     },
     focus: {
       border: {
@@ -71,6 +89,7 @@ const CustomTheme = deepMerge(grommet, {
   },
   text: {
     margin: 0,
+    color: '#000000',
     xsmall: {
       size: '13px',
       height: '14.14px'
@@ -118,12 +137,12 @@ const CustomTheme = deepMerge(grommet, {
         weight: '500',
       },
       padding: {
-        vertical: '0.813rem',
-        horizontal: '2.438rem',
+        vertical: '0.8',
+        horizontal: '2.6',
       },
       extend: `
-        width: 16.063rem;
-        height: 2.938rem;
+        width: 17.1em;
+        height: 3.1em;
       `
     },
     secondary: {
@@ -144,8 +163,8 @@ const CustomTheme = deepMerge(grommet, {
         vertical: '15px'
       },
       extend: `
-        width: 24.5rem;
-        height: 3.438rem;
+        width: 24.5em;
+        height: 3.438em;
       `
     },
     default: {

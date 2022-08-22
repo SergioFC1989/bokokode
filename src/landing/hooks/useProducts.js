@@ -1,25 +1,22 @@
-import { useMemo } from "react";
-import useFetch from "../../common/hooks/useFetch";
-const useProducts = (page, categories = [], sortKey = 'price', sortType = 'ASC') => {
-  console.log('useFecth Products')
-  const options = useMemo(() => ({
-    method: 'POST',
-    body: {
-      categories,
-      sort: {
-        key: sortKey,
-        sort: sortType
-      }
-    }
-  }), [categories, sortType, sortKey])
+import { useQuery } from "react-query";
 
-  const fetchData = useFetch(
-    `https://technical-frontend-api.bokokode.com/api/products?page=${page}`,
-    options
-  )
-  console.log('useFecth Products Final')
-
-  return fetchData;
-}
-
+const useProducts = (page = 1, categories, sortKey = 'price', sortType = 'ASC') => {
+  const query = useQuery([page, categories, sortKey, sortType], async () => {
+    const url = `https://technical-frontend-api.bokokode.com/api/products?page=${page}`
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        categories,
+        sort: {
+          key: sortKey,
+          type: sortType
+        }
+      })
+    };
+    const res = await fetch(url, options)
+    const json = await res.json()
+    return json.data
+  });
+  return query
+};
 export default useProducts;
