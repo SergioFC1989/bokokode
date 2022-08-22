@@ -10,7 +10,7 @@ const StyledButton = styled(Button)`
   font-weight: normal;
 `
 
-const PhotographyTitleBar = () => (
+const ProductTitleBar = () => (
   <Box
     direction="row"
     justify="between"
@@ -29,4 +29,4 @@ const PhotographyTitleBar = () => (
   </Box>
 );
 
-export default PhotographyTitleBar;
+export default ProductTitleBar;

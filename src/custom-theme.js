@@ -8,6 +8,7 @@ const CustomTheme = deepMerge(grommet, {
       brand: '#000000',
       'dark': '#1D1D1D',
       'dark-grey': '#656565',
+      'regular-grey': '#B4B4B4',
       'medium-grey': '#9B9B9B',
       'light-grey': '#E4E4E4',
     },
@@ -93,7 +94,7 @@ const CustomTheme = deepMerge(grommet, {
       color: 'brand',
     },
     check: {
-      radius: '0px',
+      radius: '0',
     },
     size: '1.05em',
   },
@@ -176,6 +177,40 @@ const CustomTheme = deepMerge(grommet, {
       color: 'black',
     },
   },
+  pagination: {
+    button: {
+      hover: {
+        background: {
+          color: 'none',
+        },
+        color: 'brand',
+      },
+      active: {
+        background: {
+          color: '#FFFFFF',
+        },
+      },
+      color: 'regular-grey',
+      size: {
+        small: {
+          border: {
+            radius: '0',
+            width: '1.5em',
+          },
+          pad: {
+            vertical: '0',
+            horizontal: '0',
+          },
+          font: '29px',
+          height: '1.8em',
+          width: '1.5em',
+        },
+      },
+    }, 
+    icons: {
+      color: 'brand',
+    }
+  }
 });
 
 export default CustomTheme;

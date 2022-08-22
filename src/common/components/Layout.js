@@ -7,6 +7,7 @@ import Header from './Header';
 const Layout = ({ children }) => {
   return (
     <Main
+      responsive
       gap='4.3em'
       margin={{
         horizontal: 'large',

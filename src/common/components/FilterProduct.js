@@ -8,22 +8,11 @@ const StyleCheckBoxGroup = styled(CheckBoxGroup)`
   font-weight: 400;
 `;
 
-const FilterProduct = ({ name }) => {
+const FilterProduct = ({ titleBar, options }) => {
   return (
     <Box gap='medium' width='18.5em'>
-      <Text margin={{vertical: 'medium'}} size='xlarge' weight={700}>{name}</Text>
-      <StyleCheckBoxGroup 
-        gap='medium'
-        options={[
-          'People',
-          'Premium',
-          'Pets',
-          'Food',
-          'LandMarks',
-          'Cities',
-          'Nature',
-        ]} 
-      />
+      <Text margin={{vertical: 'medium'}} size='xlarge' weight={700}>{titleBar}</Text>
+      <StyleCheckBoxGroup gap='medium' options={options} />
     </Box>
   )
 };
