@@ -28,7 +28,7 @@ const Landing = () => {
         )
         :(
           <Layout>
-            <Featured product={featuredProduct} onClick= />
+            <Featured product={featuredProduct} />
             <ProductsList 
               titleBar='Category'
               listProducts={data} 
