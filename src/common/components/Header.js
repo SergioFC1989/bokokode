@@ -9,8 +9,8 @@ const Header = () => (
     height='8.2em'
     border={{
       side: 'bottom',
-      size: '4px',
-      color: '#E4E4E4'
+      size: 'medium',
+      color: 'light-grey'
     }}
   >
     <Box basis='8em'>

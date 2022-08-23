@@ -1,16 +1,23 @@
 import React from 'react';
 import { Box } from 'grommet';
 
-import FeatureTitleBar from './FeatureTitleBar'
-import FeaturedImage from './FeaturedImage';
-import FeaturedDescription from './FeaturedDescription';
-import FeaturedAlsoBuy from './FeaturedAlsoBuy';
+import FeatureTitleBar from '../component/FeatureTitleBar'
+import FeaturedImage from '../component/FeaturedImage';
+import FeaturedDescription from '../component/FeaturedDescription';
+import FeaturedAlsoBuy from '../component/FeaturedAlsoBuy';
 
 const Featured = ({ product }) => {
-  const { name, category, description, image, people_also_buy } = product
+  const { 
+    name, 
+    category, 
+    description, 
+    image, 
+    people_also_buy 
+  } = product
 
   return(
       <Box 
+        pad={{ bottom: '4.4em', top: 'none'}}
         gap="medium"
         border={{
           side: 'bottom',

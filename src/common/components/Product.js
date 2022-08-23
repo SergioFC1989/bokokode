@@ -1,33 +1,51 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Box, Button, Image, Text } from 'grommet';
+import { Box, Image, Text } from 'grommet';
+import * as Styled from '../styles/styled-product';
 
-const StyledButton = styled(Button)`
-  font-weight: normal;
-  padding: 0px;
-`;
-
-const Product = ({ alt, src, bestSeller, category, description, price, small }) => {
+const Product = ({ 
+  alt, 
+  src, 
+  bestSeller, 
+  category, 
+  description, 
+  price, 
+  small 
+}) => {
   return(
     <Box 
       gap="small"
       width={small ? '7.8em' : '18.8em'}
     >
-      <Box>
-        {!bestSeller && (
-          <Box width="40%" background='red'>
-            <Text margin='none' size='xxsmall' weight={400}>Best Seller</Text>
-          </Box>
+      <Styled.ImageContainer>
+        {bestSeller && (
+          <Styled.ImageLabel 
+            height="2em" 
+            width="40%" 
+            background='white' 
+          >
+            <Text margin='none' textAlign='center' size={small ? 'medium' : 'large'} weight={400}>Best Seller</Text>
+          </Styled.ImageLabel>
         )}
-        <Box height={small ? '9.8em' : '26.6em'}>
-          <Image fit='cover' alt={alt} src={src} />
+        <Box flex={1} height={small ? '9.8em' : '26.6em'}>
+          <Image fill fit='cover' alt={alt} src={src} />
         </Box>
-        <StyledButton 
-          primary
-          label="ADD TO CART" 
-          onClick={() => {}}
-        />
-      </Box>
+        {small 
+          ?(
+            <Styled.ButtonSmall 
+              primary
+              label="ADD TO CART" 
+              onClick={() => {}}
+            />
+          )
+          :(
+            <Styled.ButtonRegular 
+              primary
+              label="ADD TO CART" 
+              onClick={() => {}}
+            />
+          )
+        }
+      </Styled.ImageContainer>
       <Text 
         margin='none' 
         size={small ? 'xsmall' : 'xlarge'} 

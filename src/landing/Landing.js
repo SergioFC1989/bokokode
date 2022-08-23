@@ -3,45 +3,48 @@ import { Box, Spinner } from 'grommet';
 
 import Layout from '../common/components/Layout';
 
-import Featured from './components/featured/Featured';
-import ListProducts from './components/products/ListProducts';
+import Featured from './featured/view/Featured';
+import ProductsList from './products-list/views/ProductsList';
 
 import useProducts from './hooks/useProducts';
+import useSort from './products-list/hooks/useSort';
 
 const Landing = () => {
   const {isLoading, data} = useProducts()
   const featuredProduct = useMemo(() => data?.data.find(product => product.featured), [data])
+  const { sort, onChangeSort } = useSort()
 
   return (
     <>
-      <Layout>
-        {isLoading 
-          ? (
+      {isLoading 
+        ?(
+          <Layout>
             <Box fill align='center' justify='center'>
               <Spinner size='medium'/> 
             </Box> 
-          )
-          : (
-            <Box>
-              <Featured product={featuredProduct} />
-              <ListProducts 
-                listProducts={data} 
-                titleBar='Category'
-                options={[
-                'People',
-                  'Premium',
-                  'Pets',
-                  'Food',
-                  'LandMarks',
-                  'Cities',
-                  'Nature',
-                ]}
-              />
-            </Box>
-          )
-        }
-      </Layout>
+          </Layout>
+        )
+        :(
+          <Layout>
+            <Featured product={featuredProduct} />
+            <ProductsList 
+              titleBar='Category'
+              listProducts={data} 
+              options={[
+              'People',
+                'Premium',
+                'Pets',
+                'Food',
+                'LandMarks',
+                'Cities',
+                'Nature',
+              ]}
+              sort={sort}
+              onClick={onChangeSort}
+            />
+          </Layout>
+        )
+      }
     </>
-  );
-};
+  )};
 export default Landing;

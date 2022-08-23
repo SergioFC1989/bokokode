@@ -152,6 +152,10 @@ const CustomTheme = deepMerge(grommet, {
         color: '#000000',
         round: 'none',
       },
+      extend: `
+        width: 18.8em;
+        height: 3em;
+      `
     },
     secondary: {
       opacity: 0,
@@ -175,6 +179,7 @@ const CustomTheme = deepMerge(grommet, {
     default: {
       background: 'transparent',
       color: 'black',
+      pad: '0'
     },
   },
   pagination: {
