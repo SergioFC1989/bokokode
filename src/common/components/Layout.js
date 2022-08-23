@@ -4,7 +4,7 @@ import { Main } from 'grommet';
 
 import Header from './Header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, onClickCartShopping, itemsCartShopping }) => {
   return (
     <Main
       gap='4.3em'
@@ -12,7 +12,8 @@ const Layout = ({ children }) => {
         horizontal: 'large',
       }}
     >
-      <Header />
+    {console.log(itemsCartShopping)}
+      <Header onClick={onClickCartShopping} items={itemsCartShopping} />
       {children}
     </Main>
   )
