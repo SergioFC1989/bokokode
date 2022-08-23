@@ -4,6 +4,7 @@ import ProductSort from './ProductSort';
 
 const ProductTitleBar = ({ sort, onClick }) => (
   <Box
+    fill
     direction="row"
     justify="between"
     align="start"

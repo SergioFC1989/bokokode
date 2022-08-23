@@ -8,7 +8,7 @@ const StyledButton = styled(Button)`
   font-weight: normal;
 `
 
-const FeatureTitleBar = ({ name }) => (
+const FeatureTitleBar = ({ name, onClick }) => (
   <Box
     direction="row"
     justify="between"
@@ -20,6 +20,7 @@ const FeatureTitleBar = ({ name }) => (
     <StyledButton
       primary 
       label="ADD TO CART"
+      onClick={onClick}
     />
   </Box>
 );

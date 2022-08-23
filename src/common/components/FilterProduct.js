@@ -5,7 +5,7 @@ import { CheckBoxGroup } from '../styles/styled-filter-product'
 
 const FilterProduct = ({ titleBar, options }) => {
   return (
-    <Box gap='large' width='40.2em'>
+    <Box gap='large' width='25%'>
       <Text size='xlarge' weight={700}>{titleBar}</Text>
       <CheckBoxGroup gap='medium' options={options} />
     </Box>

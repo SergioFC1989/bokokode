@@ -9,6 +9,7 @@ const Product = ({
   category, 
   description, 
   price, 
+  onClick,
   small 
 }) => {
   return(
@@ -19,7 +20,7 @@ const Product = ({
       <Styled.ImageContainer>
         {bestSeller && (
           <Styled.ImageLabel 
-            height="2em" 
+            height="medium" 
             width="40%" 
             background='white' 
           >
@@ -34,14 +35,14 @@ const Product = ({
             <Styled.ButtonSmall 
               primary
               label="ADD TO CART" 
-              onClick={() => {}}
+              onClick={onClick}
             />
           )
           :(
             <Styled.ButtonRegular 
               primary
               label="ADD TO CART" 
-              onClick={() => {}}
+              onClick={onClick}
             />
           )
         }

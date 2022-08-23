@@ -6,7 +6,7 @@ import FeaturedImage from '../component/FeaturedImage';
 import FeaturedDescription from '../component/FeaturedDescription';
 import FeaturedAlsoBuy from '../component/FeaturedAlsoBuy';
 
-const Featured = ({ product }) => {
+const Featured = ({ product, onClick }) => {
   const { 
     name, 
     category, 
@@ -25,7 +25,7 @@ const Featured = ({ product }) => {
           color: 'light-grey'
         }}
       >
-        <FeatureTitleBar name={name} />
+        <FeatureTitleBar name={name} onClick={onClick} />
         <FeaturedImage alt={image.alt} src={image.src} />
         <Box direction="row" justify="between">
           <FeaturedDescription 
