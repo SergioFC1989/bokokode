@@ -6,6 +6,7 @@ export const ImageContainer = styled(Box)`
 `;
 
 export const ImageLabel = styled(Box)`
-  position: relative;
-  top: -4.4em;
+  position: absolute;
+  background: white;
+  padding: 1.4em 3.73em;
 `;

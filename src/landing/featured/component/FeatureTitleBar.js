@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Button, Text } from 'grommet';
+import { Box, Button, Heading } from 'grommet';
 
 const StyledButton = styled(Button)`
   width: 17.1em;
@@ -13,16 +13,17 @@ const FeatureTitleBar = ({ name, onClick }) => (
     direction="row"
     justify="between"
     align="center"
+    gap='medium'
   >
     <Box fill>
-      <Text margin="none" size='xxlarge' weight={700}>{name}</Text>
+      <Heading level={1} weight={700}>{name}</Heading>
     </Box>
     <StyledButton
-      primary 
+      primary
       label="ADD TO CART"
       onClick={onClick}
     />
-  </Box>
+  </Box >
 );
 
 export default FeatureTitleBar;

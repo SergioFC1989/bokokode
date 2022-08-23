@@ -1,23 +1,12 @@
-import { Box, Button } from "grommet";
+import { Box } from "grommet";
 import styled from "styled-components";
 
-export const ButtonRegular = styled(Button)`
-  font-weight: normal;
-  padding: 0px;
-`;
-
-export const ButtonSmall = styled(Button)`
-  font-weight: normal;
-  padding: 0;
-  height: 1.8em;
-  width: 7.8em;
-`;
-
-export const ImageContainer = styled(Box)`
+export const BestSellerContainer = styled(Box)`
   position: relative;
 `;
 
-export const ImageLabel = styled(Box)`
-  position: relative;
-  top: +2em;
+export const BestSellerLabel = styled(Box)`
+  position: absolute;
+  background: white;
+  padding: 0 1em;
 `;

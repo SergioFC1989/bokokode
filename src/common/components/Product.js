@@ -1,71 +1,63 @@
 import React from 'react';
-import { Box, Image, Text } from 'grommet';
-import * as Styled from '../styles/styled-product';
+import { Box, Button, Image, Text } from 'grommet';
 
-const Product = ({ 
-  alt, 
-  src, 
-  bestSeller, 
-  category, 
-  description, 
-  price, 
+import * as Styled from '../styles/styled-product';
+import useSize from '../../landing/hooks/useSize';
+
+const Product = ({
+  alt,
+  src,
+  bestSeller,
+  category,
+  description,
+  price,
   onClick,
-  small 
+  small
 }) => {
-  return(
-    <Box 
+  const size = useSize()
+  const [W, H] = size !== 'large' ? ['14em', '20em'] : ['18.8em', '26.5em']
+  return (
+    <Box
+      justify='center'
+      width={small ? '7.8em' : W}
       gap="small"
-      width={small ? '7.8em' : '18.8em'}
     >
-      <Styled.ImageContainer>
-        {bestSeller && (
-          <Styled.ImageLabel 
-            height="medium" 
-            width="40%" 
-            background='white' 
-          >
-            <Text margin='none' textAlign='center' size={small ? 'medium' : 'large'} weight={400}>Best Seller</Text>
-          </Styled.ImageLabel>
+      <Styled.BestSellerContainer>
+        {bestSeller && !small && (
+          <Styled.BestSellerLabel>
+            <Text textAlign='center' size={small ? 'medium' : 'large'} weight={400}>Best Seller</Text>
+          </Styled.BestSellerLabel>
         )}
-        <Box flex={1} height={small ? '9.8em' : '26.6em'}>
-          <Image fill fit='cover' alt={alt} src={src} />
+        <Box height={small ? '9.8em' : H}>
+          <Image fit='cover' alt={alt} src={src} />
         </Box>
-        {small 
-          ?(
-            <Styled.ButtonSmall 
-              primary
-              label="ADD TO CART" 
-              onClick={onClick}
-            />
-          )
-          :(
-            <Styled.ButtonRegular 
-              primary
-              label="ADD TO CART" 
-              onClick={onClick}
-            />
-          )
+        {!small && (
+          <Button
+            primary
+            label="ADD TO CART"
+            onClick={onClick}
+          />
+        )
         }
-      </Styled.ImageContainer>
-      <Text 
-        margin='none' 
-        size={small ? 'xsmall' : 'xlarge'} 
+      </Styled.BestSellerContainer>
+      <Text
+        size={small ? 'xsmall' : 'xlarge'}
         weight={700}
         color='dark-grey'
       >
         {category}
       </Text>
-      <Text 
-        margin='none' 
-        size={small ? 'regular' : 'giant'} 
+      <Text
+        truncate
+        title={description}
+        size={small ? 'regular' : 'giant'}
         weight={700}
         color='brand'
       >
         {description}
       </Text>
-      <Text 
-        margin='none' 
-        size={small ? 'small' : 'xxlarge'} 
+      <Text
+        size={small ? 'small' : 'xxlarge'}
         weight={400}
         color='dark-grey'
       >

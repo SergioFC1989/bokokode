@@ -16,24 +16,24 @@ const CustomTheme = deepMerge(grommet, {
       small: {
         value: 360,
         edgeSize: {
-          small: '6px',
-          medium: '12px',
+          small: '0.4em',
+          medium: '0.8em',
           large: '0.9em',
         }
       },
       medium: {
         value: 768,
         edgeSize: {
-          small: '6px',
-          medium: '12px',
+          small: '0.1em',
+          medium: '0.8em',
           large: '3em',
         }
       },
       large: {
         value: 1440,
         edgeSize: {
-          small: '6px',
-          medium: '12px',
+          small: '0.4em',
+          medium: '0.8em',
           large: '5em',
         }
       }
@@ -98,44 +98,47 @@ const CustomTheme = deepMerge(grommet, {
     },
     size: '1.05em',
   },
+  heading: {
+    responsiveBreakpoint: 'medium'
+  },
   text: {
     margin: 0,
-    color: '#000000',
+    color: 'brand',
     xsmall: {
-      size: '13px',
-      height: '14.14px'
+      size: '0,8em',
+      height: '1em'
     },
     small: {
-      size: '15px',
-      height: '16.32px'
+      size: '1em',
+      height: '1.1em'
     },
     regular: {
-      size: '16x',
-      height: '17.41px',
+      size: '1em',
+      height: '1em',
     },
     medium: {
-      size: '18x',
-      height: '27px',
+      size: '1.2em',
+      height: '1.3em',
     },
     large: {
-      size: '20px',
-      height: '21.76px',
+      size: '1.3em',
+      height: '1.4em',
     },
     xlarge: {
-      size: '22px',
-      height: '23.94px',
+      size: '1.4em',
+      height: '1.6em',
     },
     xxlarge: {
-      size: '29px',
-      height: '31.55px',
+      size: '2em',
+      height: '1.7em',
     },
     xxxlarge: {
-      size: '32px',
-      height: '34.82px',
+      size: '2.1em',
+      height: '1.8em',
     },
     giant: {
-      size: '34px',
-      height: '36.99px',
+      size: '2.2em',
+      height: '1em',
     }
   },
   button: {
@@ -153,7 +156,7 @@ const CustomTheme = deepMerge(grommet, {
         round: 'none',
       },
       extend: `
-        width: 18.8em;
+        font-size: 1.53em;
         height: 3em;
       `
     },
@@ -165,14 +168,13 @@ const CustomTheme = deepMerge(grommet, {
       },
       border: {
         color: '#000000',
-        width: '3px',
+        width: '0.2em',
         round: 'none',
       },
       padding: {
-        vertical: '15px'
+        // vertical: '1em'
       },
       extend: `
-        width: 24.5em;
         height: 3.438em;
       `
     },
@@ -206,12 +208,12 @@ const CustomTheme = deepMerge(grommet, {
             vertical: '0',
             horizontal: '0',
           },
-          font: '29px',
+          font: '1.9em',
           height: '1.8em',
           width: '1.5em',
         },
       },
-    }, 
+    },
     icons: {
       color: 'brand',
     }

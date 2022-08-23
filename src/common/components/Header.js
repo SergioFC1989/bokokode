@@ -13,7 +13,6 @@ const Header = ({ onClick, items }) => (
       color: 'light-grey'
     }}
   >
-  {console.log(items.length)}
     <Box basis='8em'>
       <Image
         fit="contain"

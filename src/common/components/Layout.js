@@ -7,12 +7,12 @@ import Header from './Header';
 const Layout = ({ children, onClickCartShopping, itemsCartShopping }) => {
   return (
     <Main
+      responsive
       gap='4.3em'
       margin={{
         horizontal: 'large',
       }}
     >
-    {console.log(itemsCartShopping)}
       <Header onClick={onClickCartShopping} items={itemsCartShopping} />
       {children}
     </Main>
